@@ -53,7 +53,7 @@ $(function(){
         let data = $(this).serialize();
         $.ajax({
             type:"POST", 
-            url:"http://www.liulongbin.top:3007/api/login",
+            url:"http://ajax.frontend.itheima.net/api/login",
             data,
             success:function(res){
                 if(res.status !== 0){
@@ -62,7 +62,7 @@ $(function(){
                 // 内置模块 -> 弹出层 -> layer.msg 提示框(自动延时功能)
                 layer.msg("登录成功，即将跳转到首页",function(){
                 // 跳转页面
-                location.href = "../../home/index.html";
+                location.href = "/9.大事件/home/index.html";
                 });
             },
         })

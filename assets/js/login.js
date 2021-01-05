@@ -34,7 +34,7 @@ $(function(){
         let data = $(this).serialize();
         $.ajax({
             type:"POST",
-            url:"http://api-breakingnews-web.itheima.net/api/reguser",
+            url:"/api/reguser",
             data,
             success:function(res){
                 if(res.status !== 0){
@@ -53,7 +53,7 @@ $(function(){
         let data = $(this).serialize();
         $.ajax({
             type:"POST", 
-            url:"http://api-breakingnews-web.itheima.net/api/login",
+            url:"/api/login",
             data,
             success:function(res){
                 if(res.status !== 0){

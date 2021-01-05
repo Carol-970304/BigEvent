@@ -7,6 +7,15 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <title>layout 后台大布局 - Layui</title>
+    <!-- 判断本地存储是否有token信息: 解决index页面一闪而过问题 -->
+    <script>
+      let token = localStorage.getItem("token");
+      if (!token) {
+        // 去登录页面
+        location.href = "/home/login.html";
+      }
+    </script>
+
     <link rel="stylesheet" href="/9.大事件/assets/lib/layui/css/layui.css" />
     <link rel="stylesheet" href="/9.大事件/assets/fonts/iconfont.css" />
     <link rel="stylesheet" href="/9.大事件/assets/css/index.css" />
@@ -33,7 +42,9 @@
             </dl>
           </li>
           <li class="layui-nav-item">
-            <a href="javascript:;" id="logoutBtn"><span class="iconfont icon-tuichu"></span>退出</a>
+            <a href="javascript:;" id="logoutBtn"
+              ><span class="iconfont icon-tuichu"></span>退出</a
+            >
           </li>
         </ul>
       </div>
@@ -59,23 +70,47 @@
               >
             </li>
             <li class="layui-nav-item">
-              <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
+              <a class="" href="javascript:;"
+                ><span class="iconfont icon-16"></span>文章管理</a
+              >
               <dl class="layui-nav-child">
                 <dd>
                   <a href="javascript:;"
                     ><i class="layui-icon layui-icon-app"></i>文章类别</a
                   >
                 </dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>文章列表</a
+                  >
+                </dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>发布文章</a
+                  >
+                </dd>
               </dl>
             </li>
             <li class="layui-nav-item">
-              <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
+              <a href="javascript:;"
+                ><span class="iconfont icon-user"></span>个人中心</a
+              >
               <dl class="layui-nav-child">
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>基本资料</a
+                  >
+                </dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>更换头像</a
+                  >
+                </dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>重置密码</a
+                  >
+                </dd>
               </dl>
             </li>
           </ul>
@@ -85,11 +120,10 @@
       <div class="layui-body">
         <!-- 内容主体区域 -->
         <!-- <div style="padding: 15px">内容主体区域</div> -->
-        <iframe
-          src="/9.大事件/home/dashboard.html"
-          name="layUiBody"
-          frameborder="0"
-        ></iframe>
+
+        <!-- **暂时修改： -->
+        <!-- <iframe src="/9.大事件/home/dashboard.html" name="layUiBody" frameborder="0"></iframe> -->
+        <iframe src="/9.大事件/user/user_info.html" name="layUiBody" frameborder="0"></iframe>
       </div>
 
       <div class="layui-footer">

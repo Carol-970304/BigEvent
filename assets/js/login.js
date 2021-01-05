@@ -59,6 +59,10 @@ $(function(){
                 if(res.status !== 0){
                     return layer.msg("登录失败");
                 }
+
+                // 登录成功，还需要把服务器给的token信息给存储起来
+                localStorage.setItem("token", res.token);
+
                 // 内置模块 -> 弹出层 -> layer.msg 提示框(自动延时功能)
                 layer.msg("登录成功，即将跳转到首页",function(){
                 // 跳转页面

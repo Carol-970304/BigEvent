@@ -1,3 +1,4 @@
+// *没有写入口函数，方便其他分支页面调用
 
 let layer = layui.layer
 // 1.获取用户的头像和昵称：
@@ -11,7 +12,7 @@ function getUserInfo(){
             Authorization: localStorage.getItem("token")
         },
         success:function(res){
-            console.log(res)
+            // console.log(res)
             if(res.status !== 0){
                 return layer.msg("获取用户信息失败")
             }

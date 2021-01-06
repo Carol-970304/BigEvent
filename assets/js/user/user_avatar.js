@@ -31,13 +31,13 @@ $("#file").on("change",function(){
     let url = URL.createObjectURL(file) 
 
     // 更换剪裁区的图片的src属性：销毁原理的剪裁区=>更换图片=>重新创建剪裁区
-    Image.cropper("destroy").attr("src",url).cropper(options)
+    $image.cropper("destroy").attr("src",url).cropper(options)
 })
 
 // -----点击 确定 的时候，剪裁图片，转成base64格式，提交字符串到接口 ----------
 $('#sure').click(function () {
     // 剪裁得到一张图片（canvas图片）
-    let i = image.cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
+    let i = $image.cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
         width: 100,
         height: 100
     });

@@ -1,7 +1,7 @@
-// *没有写入口函数，方便其他分支页面调用
+// *没有写入口函数，方便其他分支页面调用getUserInfo()全局函数
 
 let layer = layui.layer
-// 1.获取用户的头像和昵称：
+// ---获取用户的头像和昵称----------------------------------
 getUserInfo()
 function getUserInfo(){
     $.ajax({
@@ -27,7 +27,7 @@ function getUserInfo(){
     })
 }
 
-// 2.将用户的头像和昵称渲染到页面中：
+// ---将用户的头像和昵称渲染到页面中--------------------------
 function renderUserInfo(data){
 // 优先展示昵称
 let name = data.nickname ||data.username

@@ -30,7 +30,11 @@ $("#file").on("change",function(){
     //根据文件对象，生成一个临时的url，用于访问被选择的图片：
     let url = URL.createObjectURL(file) 
 
+<<<<<<< HEAD
     // 更换剪裁区的图片的src属性：销毁原来的剪裁区=>更换图片=>重新创建剪裁区
+=======
+    // 更换剪裁区的图片的src属性：销毁原理的剪裁区=>更换图片=>重新创建剪裁区
+>>>>>>> article
     $image.cropper("destroy").attr("src",url).cropper(options)
 })
 

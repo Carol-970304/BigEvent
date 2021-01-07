@@ -1,5 +1,5 @@
 $(function(){
-    // 登陆注册页面切换：
+    // ---登陆注册页面切换------------------
     $("#gotoRegi").click(function(){
         $(".register").show()
         $(".login").hide()
@@ -9,8 +9,8 @@ $(function(){
         $(".register").hide()
         $(".login").show()
     })
-    // ------------------------------
-    // 自定义表单密码验证：
+
+    // ---自定义表单验证--------------------
     // let form = layui.form
     let form = layui.form;
     form.verify({
@@ -25,8 +25,8 @@ $(function(){
             }
         }
       }); 
-    // -------------------------------
-    // 实现注册功能：
+
+    // ---实现注册功能----------------------
     let layer = layui.layer;
     $("#regiForm").on("submit",function(e){
         e.preventDefault();
@@ -46,7 +46,7 @@ $(function(){
         })
     })
 
-    // 实现登录功能：
+    // ---实现登录功能-----------------------
     $("#loginForm").on("submit",function(e){
         e.preventDefault();
 

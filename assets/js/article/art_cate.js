@@ -51,7 +51,7 @@ $(function(){
 
     // -----编辑弹出层----------------------------------------------
     let editIndex;
-    $("#tb").on("click","editBtn",function(){
+    $("#tb").on("click",".editBtn",function(){
         editIndex = layer.open({
             content: $("#editFormTpl").html(),
             title: "编辑",
@@ -93,21 +93,21 @@ $(function(){
     })
 
     // -----删除弹出层----------------------------------------------
-    $("#tb").on("click","#delBtn",function(){
+    $("#tb").on("click",".delBtn",function(){
         let id = $(this).attr("data-id");
         layer.confirm("确定删除吗",{icon: 3,title: "提示"},function(index){
             $.ajax({
-                type: "POST",
                 url: "/my/article/deletecate/" + id,
-                data,
                 success: function(res){
                     if(res.status !== 0){
                         return layer.msg("删除失败！")
                     }
+
+                    getCate();
+                    layer.msg("删除成功！")
                 }
             })
-            layer.close(index); //隐藏弹出层
-            getCate();
+            layer.close(index); //隐藏弹出层 => 放在ajax请求外部，不论删除成功或失败都隐藏confirm弹出层
         })
     })
     

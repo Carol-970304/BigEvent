@@ -89,7 +89,7 @@ $(function(){
             // obj => obj包含了当前分页的所有参数(obj.limit / obj.curr)
             // 当first为true，表示分页在初始化渲染 / 当first为undefined，表示点击分页按钮切换
             jump: function(obj, first){
-                console.log(first)
+                // console.log(first)
                 query.pagenum = obj.curr;
                 query.pagesize = obj.limit;
 
@@ -133,5 +133,10 @@ $(function(){
     })
 
     // ---编辑弹出层---------------------------------------
+    $("#tb").on("click", ".editBtn",function(){
+        let id = $(this).attr("data-id")
+        // 以查询字符串的格式带上id的值：
+        location.href = `/9.大事件/article/art_edit.html?Id=${id}`
+    })
 
 })

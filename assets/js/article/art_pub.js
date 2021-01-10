@@ -4,10 +4,11 @@ $(function(){
     $.ajax({
         url: "/my/article/cates",
         success: function(res){
+            // console.log(res)
             res.data.forEach((item) => {
                 $(`<option value="${item.Id}">${item.name}</option>`).appendTo("[name=cate_id]")
             });
-            form.render()
+            form.render() //更新渲染
         }
     })
 

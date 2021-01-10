@@ -28,6 +28,7 @@ $(function(){
     // console.log(location.href)
     let str = location.href
     let id = str.substring(str.indexOf("=")+1, str.length)
+    let cate_id;
     // console.log(id)
     $.ajax({
         url: "/my/article/" + id,
@@ -35,8 +36,29 @@ $(function(){
             if(res.status !== 0){
                 return layer.msg("获取文章失败！")
             }
-            console.log(res)
+            // console.log(res)
+            // console.log(res.data.cate_id)
+            // *此处响应回来的cate_id = 通过(url: "/my/article/cates")响应回来的某一项item的Id
+            cate_id = res.data.cate_id
             form.val("form", res.data)
+        }
+    })
+
+    // 获取文章类别：
+    $.ajax({
+        url: "/my/article/cates",
+        success: function(res){
+            // console.log(res)
+
+            res.data.forEach((item) => {
+                // 通过(url: "/my/article/" + id)响应回来的cate_id
+                if(cate_id === item.Id){
+                    $(".cate").html(item.name)
+                }
+
+                $(`<option value="${item.Id}">${item.name}</option>`).appendTo("[name=cate_id]")
+            });
+            form.render() //更新渲染
         }
     })
 

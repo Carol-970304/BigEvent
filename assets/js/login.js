@@ -63,7 +63,13 @@ $(function(){
                 // 登录成功，还需要把服务器给的token信息给存储起来
                 localStorage.setItem("token", res.token);
 
-                // 内置模块 -> 弹出层 -> layer.msg 提示框(自动延时功能)
+                // 内置模块 -> 弹出层 -> layer.msg 提示框(自动延时功能，默认3秒后自动消失)
+                // layer.msg('提示', {
+                //     icon: 1,
+                //     time: 2000 //2秒关闭(如果不配置，默认是3秒)
+                //   }, function(){
+                //     //do something
+                //   });   
                 layer.msg("登录成功，即将跳转到首页",function(){
                 // 跳转页面
                 location.href = "/9.大事件/home/index.html";

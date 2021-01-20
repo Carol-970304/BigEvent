@@ -30,7 +30,7 @@ function getUserInfo(){
 // ---将用户的头像和昵称渲染到页面中--------------------------
 function renderUserInfo(data){
 // 优先展示昵称
-let name = data.nickname ||data.username
+let name = data.nickname || data.username
 // 名字首字母大写，作为文字头像
 let first = name[0].toUpperCase()
 

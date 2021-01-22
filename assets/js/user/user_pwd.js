@@ -42,7 +42,7 @@ $(function(){
                 }
 
                 // window.parent => 可以找到父页面的window对象(全局)
-                window.parent.getUserInfo(); //调用父页面的修改头像和昵称功能，实现同步修改
+                // window.parent.getUserInfo(); //调用父页面的修改头像和昵称功能，实现同步修改
                 layer.msg("更新密码成功")
 
                 // 清空：
